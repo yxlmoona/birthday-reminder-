@@ -10,16 +10,23 @@ class App extends React.Component {
   }
   handleView = (view) => {
     let pageTitle = ''
-    let show = this.state.view.show
+    let showGiftForm = this.state.view.showGiftForm
+    let showGifts = this.state.view.showGifts
+    let showFriendForm = this.state.view.showFriendForm
     switch (view) {
       case 'home':
         pageTitle = 'i heard that...'
         break;
       case 'gifts':
         pageTitle = 'gifts from that person...'
-        show = !this.state.view.show
+        showGifts = !this.state.view.showGifts
         break;
-
+      case 'addGifts':
+        pageTitle = 'add gift...'
+        showGiftForm = !this.state.view.showGiftForm
+      case 'addFriends':
+        pageTitle = 'add friends...'
+        showFriendForm = !this.state.view.showFriendForm
       default:
         break;
     }
@@ -27,7 +34,9 @@ class App extends React.Component {
       view:{
         page: view,
         pageTitle: pageTitle,
-        show: show
+        showGifts:showGifts,
+        showGiftForm:showGiftForm,
+        showFriendForm:showFriendForm,
       }
     })
   }
