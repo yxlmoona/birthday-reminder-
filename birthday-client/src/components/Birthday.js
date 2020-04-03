@@ -12,6 +12,9 @@ class Birthday extends React.Component{
           <h2 className="info">Relationship: {this.props.birthday.relationship}</h2>
           <h2 className="info">Gift Idea: {this.props.birthday.gift}</h2>
           <button onClick={() => {
+              this.props.handleDeleteBirthday(this.props.id)
+          }}>Delete Contact</button>
+          <button onClick={() => {
               this.props.handleView('gifts')
           }}>see gifts</button>
           <button onClick={() => {
