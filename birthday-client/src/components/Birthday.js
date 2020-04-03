@@ -22,7 +22,9 @@ class Birthday extends React.Component{
           ?  <Form
             id={this.props.id}
             handleCreateGift={this.props.handleCreateGift}
+            handleUpdateGift={this.props.handleUpdateGift}
             view={this.props.view}
+            
             />
           : ''
         }
