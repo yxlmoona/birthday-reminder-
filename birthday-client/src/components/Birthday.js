@@ -35,6 +35,7 @@ class Birthday extends React.Component{
             gifts={this.props.birthday.gifts}
             view={this.props.view}
             handleView={this.props.handleView}
+            handleDeleteGift={this.props.handleDeleteGift}
             handleUpdateGift={this.props.handleUpdateGift} />
             :''
 

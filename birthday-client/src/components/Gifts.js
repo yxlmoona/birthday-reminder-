@@ -12,16 +12,18 @@ class Gifts extends React.Component{
       <div>
       {
 
-
         this.props.gifts.map((gift) => {
         return(
         <>
           <button onClick={() => {
             this.props.handleView('editGifts')
           }}>edit gifts</button>
+          <button onClick={() => {
+            this.props.handleDeleteGift(gift.id)
+          }}>delete gifts</button>
 
-          <h2 className="info">gift's name: {gift.name}</h2>
-          <h2 className="info">gift's price: {gift.price}</h2>
+          <h1>gift's name: {gift.name}</h1>
+          <h1>gift's price: {gift.price}</h1>
           {
             this.props.view.showGiftForm
           ? <Form
