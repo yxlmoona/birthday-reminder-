@@ -708,3 +708,1796 @@ Processing by GiftsController#update as */*
 Completed 200 OK in 81ms (Views: 0.5ms | ActiveRecord: 8.1ms | Allocations: 4041)
 
 
+Started GET "/birthdays/" for ::1 at 2020-04-03 11:14:04 -0500
+Processing by BirthdaysController#index as HTML
+  [1m[36mBirthday Load (2.3ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.9ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.8ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (1.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 77ms (Views: 0.3ms | ActiveRecord: 9.0ms | Allocations: 6995)
+
+
+Started GET "/birthdays/6" for ::1 at 2020-04-03 11:14:10 -0500
+Processing by BirthdaysController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mBirthday Load (0.4ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays" WHERE "birthdays"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/birthdays_controller.rb:44:in `set_birthday'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:13:in `show'
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 0.8ms | Allocations: 1487)
+
+
+Started POST "/birthdays/6/gifts" for ::1 at 2020-04-03 11:14:47 -0500
+Processing by GiftsController#create as */*
+  Parameters: {"gift"=>{"name"=>"book", "price"=>"30"}, "birthday_id"=>"6"}
+  [1m[35m (4.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gifts_controller.rb:20:in `create'
+  [1m[36mBirthday Load (3.0ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays" WHERE "birthdays"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/gifts_controller.rb:20:in `create'
+  [1m[36mGift Create (1.6ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "price", "created_at", "updated_at", "birthday_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "book"], ["price", 30], ["created_at", "2020-04-03 16:14:48.002535"], ["updated_at", "2020-04-03 16:14:48.002535"], ["birthday_id", 6]]
+  ↳ app/controllers/gifts_controller.rb:20:in `create'
+  [1m[35m (5.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/gifts_controller.rb:20:in `create'
+Completed 201 Created in 34ms (Views: 0.6ms | ActiveRecord: 13.8ms | Allocations: 3420)
+
+
+Started GET "/birthdays/6" for ::1 at 2020-04-03 11:14:59 -0500
+Processing by BirthdaysController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mBirthday Load (2.2ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays" WHERE "birthdays"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/birthdays_controller.rb:44:in `set_birthday'
+  [1m[36mGift Load (0.9ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:13:in `show'
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 3.2ms | Allocations: 1613)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 11:35:38 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (1.2ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.7ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 287ms (Views: 1.0ms | ActiveRecord: 4.5ms | Allocations: 7127)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 11:45:41 -0500
+  [1m[35m (7.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (1.0ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (5.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.7ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 150ms (Views: 0.3ms | ActiveRecord: 24.8ms | Allocations: 20238)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 11:46:53 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (1.3ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.9ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 43ms (Views: 0.2ms | ActiveRecord: 3.8ms | Allocations: 7046)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 12:13:51 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (1.6ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (14.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (7.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.8ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (1.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 439ms (Views: 1.8ms | ActiveRecord: 33.3ms | Allocations: 7140)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 12:14:46 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (1.0ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.7ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 270ms (Views: 0.5ms | ActiveRecord: 3.7ms | Allocations: 7030)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 12:14:55 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.7ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.8ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 21ms (Views: 0.1ms | ActiveRecord: 3.0ms | Allocations: 7046)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 12:15:46 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.3ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 306ms (Views: 0.2ms | ActiveRecord: 1.9ms | Allocations: 7029)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 12:17:41 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.4ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.9ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 212ms (Views: 0.2ms | ActiveRecord: 2.9ms | Allocations: 7046)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 12:18:04 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.5ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.7ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 383ms (Views: 0.1ms | ActiveRecord: 2.7ms | Allocations: 7028)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 12:25:54 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (5.7ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.9ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.8ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (9.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 516ms (Views: 0.2ms | ActiveRecord: 19.0ms | Allocations: 7126)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 12:28:49 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.5ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (3.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (1.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (3.0ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 39ms (Views: 0.5ms | ActiveRecord: 10.0ms | Allocations: 7027)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 12:29:11 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.3ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 31ms (Views: 0.2ms | ActiveRecord: 2.6ms | Allocations: 7027)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 12:29:54 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.3ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (5.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.7ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 701ms (Views: 0.1ms | ActiveRecord: 7.7ms | Allocations: 7031)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 12:30:24 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.7ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.7ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (1.0ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 257ms (Views: 0.2ms | ActiveRecord: 4.1ms | Allocations: 7027)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 12:31:19 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.7ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 274ms (Views: 0.1ms | ActiveRecord: 2.4ms | Allocations: 7030)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 12:34:23 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.3ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.8ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 158ms (Views: 0.2ms | ActiveRecord: 2.5ms | Allocations: 7027)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 12:35:50 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.3ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.8ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (1.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 32ms (Views: 0.2ms | ActiveRecord: 3.9ms | Allocations: 7027)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 12:36:33 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.7ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (1.0ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 296ms (Views: 0.3ms | ActiveRecord: 3.3ms | Allocations: 7027)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 12:38:51 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.3ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 127ms (Views: 0.2ms | ActiveRecord: 2.4ms | Allocations: 7027)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 12:50:26 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (1.2ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.8ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (1.0ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.8ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 199ms (Views: 0.2ms | ActiveRecord: 5.6ms | Allocations: 7127)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 12:50:30 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.5ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 270ms (Views: 0.1ms | ActiveRecord: 2.2ms | Allocations: 7028)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 12:51:50 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.4ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 133ms (Views: 0.1ms | ActiveRecord: 2.2ms | Allocations: 7027)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 12:52:36 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (1.1ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.7ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 104ms (Views: 0.1ms | ActiveRecord: 3.1ms | Allocations: 7027)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 12:52:47 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.5ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 150ms (Views: 0.1ms | ActiveRecord: 2.4ms | Allocations: 7028)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 12:56:32 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.5ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 160ms (Views: 0.1ms | ActiveRecord: 2.3ms | Allocations: 7030)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 12:56:36 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.4ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 276ms (Views: 0.2ms | ActiveRecord: 2.5ms | Allocations: 7029)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 12:57:05 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.3ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 229ms (Views: 0.1ms | ActiveRecord: 2.0ms | Allocations: 7027)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 12:58:15 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.3ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 276ms (Views: 0.3ms | ActiveRecord: 2.1ms | Allocations: 7030)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 12:58:23 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.5ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 227ms (Views: 0.1ms | ActiveRecord: 2.3ms | Allocations: 7027)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 12:58:37 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.3ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 265ms (Views: 0.2ms | ActiveRecord: 2.3ms | Allocations: 7030)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 12:59:03 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.5ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.7ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 198ms (Views: 0.1ms | ActiveRecord: 2.4ms | Allocations: 7031)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 13:00:01 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (1.0ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 20ms (Views: 0.2ms | ActiveRecord: 2.7ms | Allocations: 7027)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 13:00:18 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.6ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 199ms (Views: 0.2ms | ActiveRecord: 2.3ms | Allocations: 7030)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 13:03:29 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (1.1ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 18ms (Views: 0.1ms | ActiveRecord: 2.7ms | Allocations: 7027)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 13:03:45 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.7ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.7ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 223ms (Views: 0.2ms | ActiveRecord: 3.0ms | Allocations: 7027)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 13:04:21 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.6ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.7ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 218ms (Views: 0.2ms | ActiveRecord: 3.1ms | Allocations: 7027)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 13:05:01 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.4ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.7ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.7ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 215ms (Views: 0.2ms | ActiveRecord: 3.4ms | Allocations: 7031)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 13:05:07 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.3ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.7ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 17ms (Views: 0.1ms | ActiveRecord: 2.2ms | Allocations: 7027)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 13:12:50 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (1.6ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.9ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 210ms (Views: 0.2ms | ActiveRecord: 5.1ms | Allocations: 7126)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 13:12:59 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.4ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 297ms (Views: 0.2ms | ActiveRecord: 2.6ms | Allocations: 7030)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 13:17:06 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.4ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 56ms (Views: 0.2ms | ActiveRecord: 2.5ms | Allocations: 7027)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 13:18:44 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.4ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 219ms (Views: 0.1ms | ActiveRecord: 2.3ms | Allocations: 7030)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 13:18:56 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.4ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 196ms (Views: 0.2ms | ActiveRecord: 2.2ms | Allocations: 7027)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 13:20:01 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.3ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.8ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 264ms (Views: 0.1ms | ActiveRecord: 2.6ms | Allocations: 7027)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 13:21:42 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.4ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 176ms (Views: 0.2ms | ActiveRecord: 2.7ms | Allocations: 7027)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 13:22:22 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.4ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 162ms (Views: 0.1ms | ActiveRecord: 2.1ms | Allocations: 7027)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 13:23:16 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.7ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (1.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 154ms (Views: 0.2ms | ActiveRecord: 3.8ms | Allocations: 7028)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 13:23:55 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.4ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 191ms (Views: 0.2ms | ActiveRecord: 2.4ms | Allocations: 7028)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 13:25:38 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (1.3ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.7ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (1.0ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 189ms (Views: 0.2ms | ActiveRecord: 4.1ms | Allocations: 7029)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 13:26:33 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.4ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 129ms (Views: 0.2ms | ActiveRecord: 2.6ms | Allocations: 7027)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 13:26:37 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (1.2ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 250ms (Views: 0.2ms | ActiveRecord: 2.7ms | Allocations: 7028)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 13:26:46 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (1.0ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.7ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.8ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 472ms (Views: 0.3ms | ActiveRecord: 3.9ms | Allocations: 7027)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 13:27:56 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.4ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 232ms (Views: 0.2ms | ActiveRecord: 2.8ms | Allocations: 7028)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 13:28:09 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.6ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 26ms (Views: 0.2ms | ActiveRecord: 2.8ms | Allocations: 7028)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 13:28:38 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.4ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 165ms (Views: 0.2ms | ActiveRecord: 2.0ms | Allocations: 7031)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 13:29:22 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.3ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (1.0ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (1.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 294ms (Views: 0.2ms | ActiveRecord: 4.3ms | Allocations: 7027)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 13:29:29 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.5ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.9ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (1.1ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 38ms (Views: 1.5ms | ActiveRecord: 4.0ms | Allocations: 7027)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 13:33:30 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.8ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (17.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 301ms (Views: 7.9ms | ActiveRecord: 20.1ms | Allocations: 7028)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 13:39:53 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (2.8ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (1.8ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (2.1ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (1.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 638ms (Views: 0.2ms | ActiveRecord: 13.0ms | Allocations: 7130)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 13:49:18 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (1.2ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.7ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (1.1ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (1.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 50ms (Views: 0.2ms | ActiveRecord: 6.5ms | Allocations: 7126)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 14:01:11 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (4.9ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.8ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (1.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (1.8ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (3.0ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (1.1ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 83ms (Views: 1.9ms | ActiveRecord: 13.7ms | Allocations: 7127)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 14:01:57 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (3.5ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (4.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 43ms (Views: 0.3ms | ActiveRecord: 9.8ms | Allocations: 7027)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 14:03:19 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.5ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (1.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 810ms (Views: 0.2ms | ActiveRecord: 3.6ms | Allocations: 7028)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 14:03:43 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.8ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.7ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (1.1ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (1.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 64ms (Views: 0.6ms | ActiveRecord: 5.1ms | Allocations: 7027)
+
+
+Started POST "/birthdays/1/gifts" for ::1 at 2020-04-03 14:03:54 -0500
+Processing by GiftsController#create as HTML
+  Parameters: {"name"=>"apple", "price"=>"10", "birthday_id"=>"1", "gift"=>{"name"=>"apple", "price"=>"10"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gifts_controller.rb:20:in `create'
+  [1m[36mBirthday Load (0.4ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays" WHERE "birthdays"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/gifts_controller.rb:20:in `create'
+  [1m[36mGift Create (2.3ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "price", "created_at", "updated_at", "birthday_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "apple"], ["price", 10], ["created_at", "2020-04-03 19:03:54.821908"], ["updated_at", "2020-04-03 19:03:54.821908"], ["birthday_id", 1]]
+  ↳ app/controllers/gifts_controller.rb:20:in `create'
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/gifts_controller.rb:20:in `create'
+Completed 201 Created in 20ms (Views: 0.4ms | ActiveRecord: 4.0ms | Allocations: 3833)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 14:03:54 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.3ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (2.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 38ms (Views: 0.3ms | ActiveRecord: 3.8ms | Allocations: 7161)
+
+
+Started POST "/birthdays/1/gifts" for ::1 at 2020-04-03 14:05:42 -0500
+Processing by GiftsController#create as HTML
+  Parameters: {"name"=>"apple1", "price"=>"20", "birthday_id"=>"1", "gift"=>{"name"=>"apple1", "price"=>"20"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gifts_controller.rb:20:in `create'
+  [1m[36mBirthday Load (0.4ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays" WHERE "birthdays"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/gifts_controller.rb:20:in `create'
+  [1m[36mGift Create (2.8ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "price", "created_at", "updated_at", "birthday_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "apple1"], ["price", 20], ["created_at", "2020-04-03 19:05:42.826011"], ["updated_at", "2020-04-03 19:05:42.826011"], ["birthday_id", 1]]
+  ↳ app/controllers/gifts_controller.rb:20:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/gifts_controller.rb:20:in `create'
+Completed 201 Created in 12ms (Views: 0.4ms | ActiveRecord: 3.8ms | Allocations: 3420)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 14:05:42 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.6ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 43ms (Views: 0.1ms | ActiveRecord: 2.7ms | Allocations: 7287)
+
+
+Started GET "/" for ::1 at 2020-04-03 14:07:23 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Library/Ruby/Gems/2.6.0/gems/railties-6.0.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Library/Ruby/Gems/2.6.0/gems/railties-6.0.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 31.1ms | Allocations: 315)
+Completed 200 OK in 57ms (Views: 40.9ms | ActiveRecord: 0.0ms | Allocations: 1592)
+
+
+Started GET "/birthdays/1/gifts" for ::1 at 2020-04-03 14:07:34 -0500
+Processing by GiftsController#index as HTML
+  Parameters: {"birthday_id"=>"1"}
+  [1m[36mGift Load (0.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts"[0m
+  ↳ app/controllers/gifts_controller.rb:8:in `index'
+Completed 200 OK in 20ms (Views: 19.3ms | ActiveRecord: 0.5ms | Allocations: 1820)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 14:15:45 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (1.6ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (1.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (4.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (1.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 230ms (Views: 0.2ms | ActiveRecord: 16.4ms | Allocations: 7386)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 14:17:02 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.5ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (1.1ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (1.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 917ms (Views: 0.2ms | ActiveRecord: 3.8ms | Allocations: 7288)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 14:18:00 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.8ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.7ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (1.1ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (2.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 38ms (Views: 0.2ms | ActiveRecord: 6.0ms | Allocations: 7290)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 14:20:53 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.4ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.8ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (1.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 1124ms (Views: 0.3ms | ActiveRecord: 4.4ms | Allocations: 7288)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 14:24:10 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.9ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (1.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (7.0ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (4.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (1.0ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (7.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (5.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 73ms (Views: 0.2ms | ActiveRecord: 27.2ms | Allocations: 7287)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 14:24:51 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (1.1ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (1.7ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 45ms (Views: 0.7ms | ActiveRecord: 5.4ms | Allocations: 7287)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 14:25:41 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.5ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (139.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (1.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 188ms (Views: 0.2ms | ActiveRecord: 142.9ms | Allocations: 7288)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 14:26:19 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.4ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (1.1ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (1.8ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (3.7ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 42ms (Views: 0.1ms | ActiveRecord: 7.8ms | Allocations: 7287)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 14:27:17 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.5ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (1.7ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 293ms (Views: 1.4ms | ActiveRecord: 3.7ms | Allocations: 7290)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 14:32:18 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.3ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 39ms (Views: 0.1ms | ActiveRecord: 2.0ms | Allocations: 7287)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 14:37:19 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.3ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 31ms (Views: 0.1ms | ActiveRecord: 2.4ms | Allocations: 7287)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 14:37:49 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (1.2ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.9ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (4.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.8ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (5.9ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 80ms (Views: 0.2ms | ActiveRecord: 14.0ms | Allocations: 7287)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 14:39:12 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.5ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (1.7ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.8ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 42ms (Views: 0.1ms | ActiveRecord: 4.4ms | Allocations: 7287)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 14:40:51 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.4ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (12.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (4.9ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 76ms (Views: 0.1ms | ActiveRecord: 18.6ms | Allocations: 7287)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 14:41:08 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (1.8ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (1.0ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 44ms (Views: 0.2ms | ActiveRecord: 4.5ms | Allocations: 7290)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 14:42:27 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.5ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.7ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (1.8ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 27ms (Views: 0.1ms | ActiveRecord: 4.2ms | Allocations: 7287)
+
+
+Started POST "/birthdays" for ::1 at 2020-04-03 14:42:43 -0500
+Processing by BirthdaysController#create as HTML
+  Parameters: {"name"=>"xiaolin 1", "dob"=>"00000", "relationship"=>"1234", "gift"=>"333", "birthday"=>{"name"=>"xiaolin 1", "dob"=>"00000", "relationship"=>"1234", "gift"=>"333"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/birthdays_controller.rb:20:in `create'
+  [1m[36mBirthday Create (8.4ms)[0m  [1m[32mINSERT INTO "birthdays" ("name", "dob", "relationship", "gift", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "xiaolin 1"], ["dob", "00000"], ["relationship", "1234"], ["gift", "333"], ["created_at", "2020-04-03 19:42:43.934811"], ["updated_at", "2020-04-03 19:42:43.934811"]]
+  ↳ app/controllers/birthdays_controller.rb:20:in `create'
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/birthdays_controller.rb:20:in `create'
+Completed 201 Created in 24ms (Views: 1.9ms | ActiveRecord: 9.8ms | Allocations: 2601)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 14:42:43 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (8.0ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 8]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 34ms (Views: 0.1ms | ActiveRecord: 9.8ms | Allocations: 8215)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 14:43:12 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.5ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.9ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.7ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 8]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 30ms (Views: 0.1ms | ActiveRecord: 3.6ms | Allocations: 8215)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 14:43:54 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (0.5ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (1.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 8]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 27ms (Views: 0.1ms | ActiveRecord: 3.5ms | Allocations: 8215)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 14:45:39 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (4.0ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (3.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (1.8ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 8]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 1159ms (Views: 0.1ms | ActiveRecord: 11.1ms | Allocations: 8222)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 14:46:52 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (1.1ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (1.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 8]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 719ms (Views: 0.1ms | ActiveRecord: 4.7ms | Allocations: 8216)
+
+
+Started GET "/birthdays" for ::1 at 2020-04-03 14:49:27 -0500
+Processing by BirthdaysController#index as */*
+  [1m[36mBirthday Load (1.3ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (5.1ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 1]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 2]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 3]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 4]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.8ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 5]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 6]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+  [1m[36mGift Load (0.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 8]]
+  ↳ app/controllers/birthdays_controller.rb:8:in `index'
+Completed 200 OK in 45ms (Views: 0.3ms | ActiveRecord: 9.1ms | Allocations: 8215)
+
+
