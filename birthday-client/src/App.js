@@ -9,6 +9,7 @@ class App extends React.Component {
       showGiftForm: false,
       showFriendForm:false
     }
+
   }
   handleView = (view) => {
     let pageTitle = ''
@@ -26,6 +27,11 @@ class App extends React.Component {
       case 'addGifts':
         pageTitle = 'add gift...'
         showGiftForm = !this.state.view.showGiftForm
+        break;
+      case 'editGifts':
+        pageTitle = 'edit gift...'
+        showGiftForm = !this.state.view.showGiftForm
+        break;
       case 'addFriends':
         pageTitle = 'add friends...'
         showFriendForm = !this.state.view.showFriendForm
