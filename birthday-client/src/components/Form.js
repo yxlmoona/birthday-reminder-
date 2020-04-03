@@ -14,6 +14,11 @@ class Form extends React.Component{
   handleSubmit = (e) => {
     e.preventDefault()
     this.props.handleCreateGift(this.state, this.props.id)
+
+    this.setState({
+      name: '',
+      price: 0
+    })
   }
   render(){
     return(

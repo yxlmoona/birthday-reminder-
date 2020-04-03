@@ -13,13 +13,20 @@ class Birthday extends React.Component{
         <button onClick={() => {
             this.props.handleView('gifts')
         }}>see gifts</button>
-        <button>add gifts</button>
-        <Form
-        id={this.props.id}
-        handleCreateGift={this.props.handleCreateGift}
-        />
+        <button onClick={() => {
+            this.props.handleView('addGifts')
+        }}>add gifts</button>
         {
-          this.props.view.show
+          this.props.view.showGiftForm
+          ?  <Form
+            id={this.props.id}
+            handleCreateGift={this.props.handleCreateGift}
+            view={this.props.view}
+            />
+          : ''
+        }
+        {
+          this.props.view.showGifts
           ?<Gifts
           gifts={this.props.birthday.gifts}
           view={this.props.view} />
