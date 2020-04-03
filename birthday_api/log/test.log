@@ -1,0 +1,298 @@
+  [1m[35m (30.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "birthday_api_test"[0m
+  [1m[35m (203.3ms)[0m  [1m[35mCREATE DATABASE "birthday_api_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "birthdays" CASCADE[0m
+  [1m[35m (10.1ms)[0m  [1m[35mCREATE TABLE "birthdays" ("id" bigserial primary key, "name" character varying, "dob" character varying, "relationship" character varying, "gift" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "gifts" CASCADE[0m
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE TABLE "gifts" ("id" bigserial primary key, "name" character varying, "sender" character varying, "price" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "birthday_id" integer)[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200403144735)[0m
+  [1m[35m (9.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200403144253),
+(20200403144621);
+
+[0m
+  [1m[35m (9.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2020-04-03 17:35:10.156999"], ["updated_at", "2020-04-03 17:35:10.156999"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "57e2a9da82d3002dcf4d884d7a935c47f656a21d"], ["created_at", "2020-04-03 17:35:10.161871"], ["updated_at", "2020-04-03 17:35:10.161871"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (249.0ms)[0m  [1m[35mCREATE DATABASE "birthday_api_test-0" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (274.4ms)[0m  [1m[35mCREATE DATABASE "birthday_api_test-1" ENCODING = 'unicode'[0m
+  [1m[35m (272.8ms)[0m  [1m[35mCREATE DATABASE "birthday_api_test-2" ENCODING = 'unicode'[0m
+  [1m[35m (271.7ms)[0m  [1m[35mCREATE DATABASE "birthday_api_test-3" ENCODING = 'unicode'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "birthdays" CASCADE[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (17.2ms)[0m  [1m[35mCREATE TABLE "birthdays" ("id" bigserial primary key, "name" character varying, "dob" character varying, "relationship" character varying, "gift" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "gifts" CASCADE[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "birthdays" CASCADE[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "birthdays" CASCADE[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "birthdays" CASCADE[0m
+  [1m[35m (10.5ms)[0m  [1m[35mCREATE TABLE "gifts" ("id" bigserial primary key, "name" character varying, "sender" character varying, "price" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "birthday_id" integer)[0m
+  [1m[35m (13.9ms)[0m  [1m[35mCREATE TABLE "birthdays" ("id" bigserial primary key, "name" character varying, "dob" character varying, "relationship" character varying, "gift" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "gifts" CASCADE[0m
+  [1m[35m (14.9ms)[0m  [1m[35mCREATE TABLE "birthdays" ("id" bigserial primary key, "name" character varying, "dob" character varying, "relationship" character varying, "gift" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (15.2ms)[0m  [1m[35mCREATE TABLE "birthdays" ("id" bigserial primary key, "name" character varying, "dob" character varying, "relationship" character varying, "gift" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "gifts" CASCADE[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "gifts" CASCADE[0m
+  [1m[35m (10.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE TABLE "gifts" ("id" bigserial primary key, "name" character varying, "sender" character varying, "price" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "birthday_id" integer)[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE "gifts" ("id" bigserial primary key, "name" character varying, "sender" character varying, "price" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "birthday_id" integer)[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE "gifts" ("id" bigserial primary key, "name" character varying, "sender" character varying, "price" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "birthday_id" integer)[0m
+  [1m[35m (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200403144735)[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200403144253),
+(20200403144621);
+
+[0m
+  [1m[35m (8.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (8.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (10.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200403144735)[0m
+  [1m[35m (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200403144735)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200403144253),
+(20200403144621);
+
+[0m
+  [1m[35m (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200403144253),
+(20200403144621);
+
+[0m
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200403144735)[0m
+  [1m[35m (1.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200403144253),
+(20200403144621);
+
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2020-04-03 17:35:10.583414"], ["updated_at", "2020-04-03 17:35:10.583414"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (8.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "57e2a9da82d3002dcf4d884d7a935c47f656a21d"], ["created_at", "2020-04-03 17:35:10.589486"], ["updated_at", "2020-04-03 17:35:10.589486"]]
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2020-04-03 17:35:10.598269"], ["updated_at", "2020-04-03 17:35:10.598269"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2020-04-03 17:35:10.598382"], ["updated_at", "2020-04-03 17:35:10.598382"]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2020-04-03 17:35:10.599687"], ["updated_at", "2020-04-03 17:35:10.599687"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "57e2a9da82d3002dcf4d884d7a935c47f656a21d"], ["created_at", "2020-04-03 17:35:10.603110"], ["updated_at", "2020-04-03 17:35:10.603110"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "57e2a9da82d3002dcf4d884d7a935c47f656a21d"], ["created_at", "2020-04-03 17:35:10.603946"], ["updated_at", "2020-04-03 17:35:10.603946"]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "57e2a9da82d3002dcf4d884d7a935c47f656a21d"], ["created_at", "2020-04-03 17:35:10.604615"], ["updated_at", "2020-04-03 17:35:10.604615"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "birthdays" DISABLE TRIGGER ALL;ALTER TABLE "gifts" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.8ms)[0m  [1m[31mDELETE FROM "gifts";
+DELETE FROM "birthdays";
+INSERT INTO "gifts" ("id", "name", "sender", "price", "created_at", "updated_at", "birthday_id") VALUES (980190962, 'MyString', 'MyString', 1, '2020-04-03 17:35:10.610013', '2020-04-03 17:35:10.610013', DEFAULT), (298486374, 'MyString', 'MyString', 1, '2020-04-03 17:35:10.610013', '2020-04-03 17:35:10.610013', DEFAULT);
+INSERT INTO "birthdays" ("id", "name", "dob", "relationship", "gift", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', '2020-04-03 17:35:10.614526', '2020-04-03 17:35:10.614526'), (298486374, 'MyString', 'MyString', 'MyString', 'MyString', '2020-04-03 17:35:10.614526', '2020-04-03 17:35:10.614526')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "birthdays" ENABLE TRIGGER ALL;ALTER TABLE "gifts" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------
+BirthdaysControllerTest: test_should_update_birthday
+----------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "birthdays" DISABLE TRIGGER ALL;ALTER TABLE "gifts" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.8ms)[0m  [1m[31mDELETE FROM "gifts";
+DELETE FROM "birthdays";
+INSERT INTO "gifts" ("id", "name", "sender", "price", "created_at", "updated_at", "birthday_id") VALUES (980190962, 'MyString', 'MyString', 1, '2020-04-03 17:35:10.619254', '2020-04-03 17:35:10.619254', DEFAULT), (298486374, 'MyString', 'MyString', 1, '2020-04-03 17:35:10.619254', '2020-04-03 17:35:10.619254', DEFAULT);
+INSERT INTO "birthdays" ("id", "name", "dob", "relationship", "gift", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', '2020-04-03 17:35:10.625455', '2020-04-03 17:35:10.625455'), (298486374, 'MyString', 'MyString', 'MyString', 'MyString', '2020-04-03 17:35:10.625455', '2020-04-03 17:35:10.625455')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "birthdays" DISABLE TRIGGER ALL;ALTER TABLE "gifts" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "gifts";
+DELETE FROM "birthdays";
+INSERT INTO "gifts" ("id", "name", "sender", "price", "created_at", "updated_at", "birthday_id") VALUES (980190962, 'MyString', 'MyString', 1, '2020-04-03 17:35:10.621018', '2020-04-03 17:35:10.621018', DEFAULT), (298486374, 'MyString', 'MyString', 1, '2020-04-03 17:35:10.621018', '2020-04-03 17:35:10.621018', DEFAULT);
+INSERT INTO "birthdays" ("id", "name", "dob", "relationship", "gift", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', '2020-04-03 17:35:10.626532', '2020-04-03 17:35:10.626532'), (298486374, 'MyString', 'MyString', 'MyString', 'MyString', '2020-04-03 17:35:10.626532', '2020-04-03 17:35:10.626532')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "birthdays" ENABLE TRIGGER ALL;ALTER TABLE "gifts" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "birthdays" DISABLE TRIGGER ALL;ALTER TABLE "gifts" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.7ms)[0m  [1m[31mDELETE FROM "gifts";
+DELETE FROM "birthdays";
+INSERT INTO "gifts" ("id", "name", "sender", "price", "created_at", "updated_at", "birthday_id") VALUES (980190962, 'MyString', 'MyString', 1, '2020-04-03 17:35:10.623193', '2020-04-03 17:35:10.623193', DEFAULT), (298486374, 'MyString', 'MyString', 1, '2020-04-03 17:35:10.623193', '2020-04-03 17:35:10.623193', DEFAULT);
+INSERT INTO "birthdays" ("id", "name", "dob", "relationship", "gift", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', '2020-04-03 17:35:10.628554', '2020-04-03 17:35:10.628554'), (298486374, 'MyString', 'MyString', 'MyString', 'MyString', '2020-04-03 17:35:10.628554', '2020-04-03 17:35:10.628554')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "birthdays" ENABLE TRIGGER ALL;ALTER TABLE "gifts" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "birthdays" ENABLE TRIGGER ALL;ALTER TABLE "gifts" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------
+BirthdaysControllerTest: test_should_show_birthday
+--------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------------
+BirthdaysControllerTest: test_should_destroy_birthday
+-----------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------
+BirthdaysControllerTest: test_should_get_index
+----------------------------------------------
+  [1m[36mBirthday Load (0.2ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays" WHERE "birthdays"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mBirthday Load (0.2ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays" WHERE "birthdays"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mBirthday Load (0.1ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays" WHERE "birthdays"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mBirthday Load (0.1ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays" WHERE "birthdays"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "birthdays"[0m
+Started DELETE "/birthdays/980190962" for 127.0.0.1 at 2020-04-03 12:35:10 -0500
+Started GET "/birthdays/980190962" for 127.0.0.1 at 2020-04-03 12:35:10 -0500
+Processing by BirthdaysController#show as JSON
+Processing by BirthdaysController#destroy as JSON
+  Parameters: {"id"=>"980190962", "birthday"=>{}}
+  Parameters: {"id"=>"980190962", "birthday"=>{}}
+  [1m[36mBirthday Load (0.2ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays" WHERE "birthdays"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mBirthday Load (0.2ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays" WHERE "birthdays"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/birthdays/980190962" for 127.0.0.1 at 2020-04-03 12:35:10 -0500
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBirthday Destroy (0.2ms)[0m  [1m[31mDELETE FROM "birthdays" WHERE "birthdays"."id" = $1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 2ms (ActiveRecord: 0.7ms | Allocations: 502)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "birthdays"[0m
+Started GET "/birthdays" for 127.0.0.1 at 2020-04-03 12:35:10 -0500
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 980190962]]
+----------------------------------------------------
+BirthdaysControllerTest: test_should_create_birthday
+----------------------------------------------------
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 2557)
+  [1m[36mBirthday Load (0.2ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays" WHERE "birthdays"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "birthdays"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Started POST "/birthdays" for 127.0.0.1 at 2020-04-03 12:35:10 -0500
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+GiftsControllerTest: test_should_destroy_gift
+---------------------------------------------
+Processing by BirthdaysController#create as JSON
+  Parameters: {"birthday"=>{"dob"=>"MyString", "gift"=>"MyString", "name"=>"MyString", "relationship"=>"MyString"}}
+  [1m[36mGift Load (0.1ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Processing by BirthdaysController#update as JSON
+  Parameters: {"birthday"=>{"dob"=>"MyString", "gift"=>"MyString", "name"=>"MyString", "relationship"=>"MyString"}, "id"=>"980190962"}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBirthday Create (0.3ms)[0m  [1m[32mINSERT INTO "birthdays" ("name", "dob", "relationship", "gift", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "MyString"], ["dob", "MyString"], ["relationship", "MyString"], ["gift", "MyString"], ["created_at", "2020-04-03 17:35:10.717607"], ["updated_at", "2020-04-03 17:35:10.717607"]]
+  [1m[36mBirthday Load (0.3ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays" WHERE "birthdays"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 3ms (Views: 0.6ms | ActiveRecord: 0.5ms | Allocations: 980)
+Processing by BirthdaysController#index as JSON
+  Parameters: {"birthday"=>{}}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "birthdays"[0m
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 898)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mBirthday Load (0.3ms)[0m  [1m[34mSELECT "birthdays".* FROM "birthdays"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "gifts"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+GiftsControllerTest: test_should_get_index
+------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Started DELETE "/gifts/980190962" for 127.0.0.1 at 2020-04-03 12:35:10 -0500
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+GiftsControllerTest: test_should_show_gift
+------------------------------------------
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Processing by GiftsController#destroy as JSON
+  Parameters: {"id"=>"980190962", "gift"=>{}}
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 980190962]]
+  [1m[36mGift Load (0.1ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mGift Load (0.1ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."birthday_id" = $1[0m  [["birthday_id", 298486374]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGift Destroy (0.2ms)[0m  [1m[31mDELETE FROM "gifts" WHERE "gifts"."id" = $1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 2ms (ActiveRecord: 0.5ms | Allocations: 459)
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 2794)
+Started GET "/gifts" for 127.0.0.1 at 2020-04-03 12:35:10 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "gifts"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+GiftsControllerTest: test_should_update_gift
+--------------------------------------------
+Processing by GiftsController#index as JSON
+  Parameters: {"gift"=>{}}
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+GiftsControllerTest: test_should_create_gift
+--------------------------------------------
+Started PATCH "/gifts/980190962" for 127.0.0.1 at 2020-04-03 12:35:10 -0500
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 469)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/gifts/980190962" for 127.0.0.1 at 2020-04-03 12:35:10 -0500
+Processing by GiftsController#update as JSON
+  Parameters: {"gift"=>{"name"=>"MyString", "price"=>1, "sender"=>"MyString"}, "id"=>"980190962"}
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Processing by GiftsController#show as JSON
+  Parameters: {"id"=>"980190962", "gift"=>{}}
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 456)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "gifts"[0m
+Started POST "/gifts" for 127.0.0.1 at 2020-04-03 12:35:10 -0500
+Completed 422 Unprocessable Entity in 8ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 3472)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Processing by GiftsController#create as JSON
+  Parameters: {"gift"=>{"name"=>"MyString", "price"=>1, "sender"=>"MyString"}}
+Completed 422 Unprocessable Entity in 5ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 2170)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "gifts"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
