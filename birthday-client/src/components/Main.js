@@ -64,6 +64,16 @@ handleDeleteGift = async(id) => {
     })
     this.fetchBirthdays()
   }
+  handleDeleteBirthday = async(id) => {
+      let response = await fetch(`http://localhost:3000/birthdays/${id}`,{
+        method: 'DELETE',
+        headers: {
+          'Accept': 'application/json, text/plain, */*',
+          'Content-Type': 'application/json'
+        }
+      })
+      this.fetchBirthdays()
+    }
 handleUpdateGift = async(updateData, giftId) => {
   let response = await fetch(`http://localhost:3000/gifts/${giftId}`,{
     body: JSON.stringify(updateData),
@@ -75,7 +85,7 @@ handleUpdateGift = async(updateData, giftId) => {
   })
   let data = await response.json()
   console.log(data);
-  this.props.handleView('home')
+
   this.fetchBirthdays()
 }
   render(){
@@ -88,7 +98,9 @@ handleUpdateGift = async(updateData, giftId) => {
         {
           this.props.view.showFriendForm
           ?
-          <BirthdayForm handleCreateBirthday={this.handleCreateBirthday}/>
+          <BirthdayForm
+
+          handleCreateBirthday={this.handleCreateBirthday}/>
           :''
         }
 
@@ -98,6 +110,7 @@ handleUpdateGift = async(updateData, giftId) => {
         return(
           <>
           <Birthday
+          handleDeleteBirthday={this.handleDeleteBirthday}
           handleCreateGift={this.handleCreateGift}
           handleUpdateGift={this.handleUpdateGift}
           handleDeleteGift={this.handleDeleteGift}
