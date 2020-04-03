@@ -4,10 +4,8 @@ class App extends React.Component {
   state = {
     view:{
       page: 'home',
-      pageTitle: 'I heard that...',
-      showGifts: false,
-      showGiftForm: false,
-      showFriendForm:false
+      pageTitle: 'Birthdays',
+      show: true
     }
 
   }
@@ -50,7 +48,7 @@ class App extends React.Component {
   }
   render(){
     return(
-      <div>
+      <div className="container">
        <Main
        view={this.state.view}
        handleView={this.handleView}/>

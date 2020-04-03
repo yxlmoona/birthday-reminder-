@@ -54,6 +54,16 @@ handleCreateBirthday = async(createData) => {
   this.fetchBirthdays()
 
 }
+handleDeleteGift = async(id) => {
+    let response = await fetch(`http://localhost:3000/gifts/${id}`,{
+      method: 'DELETE',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      }
+    })
+    this.fetchBirthdays()
+  }
 handleUpdateGift = async(updateData, giftId) => {
   let response = await fetch(`http://localhost:3000/gifts/${giftId}`,{
     body: JSON.stringify(updateData),
@@ -90,6 +100,7 @@ handleUpdateGift = async(updateData, giftId) => {
           <Birthday
           handleCreateGift={this.handleCreateGift}
           handleUpdateGift={this.handleUpdateGift}
+          handleDeleteGift={this.handleDeleteGift}
           birthday={birthday}
           id={birthday.id}
 
