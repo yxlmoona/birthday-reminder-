@@ -54,6 +54,20 @@ handleCreateBirthday = async(createData) => {
   this.fetchBirthdays()
 
 }
+handleUpdateGift = async(updateData, giftId) => {
+  let response = await fetch(`http://localhost:3000/gifts/${giftId}`,{
+    body: JSON.stringify(updateData),
+    method: 'PUT',
+    headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+    }
+  })
+  let data = await response.json()
+  console.log(data);
+  this.props.handleView('home')
+  this.fetchBirthdays()
+}
   render(){
     return(
       <div>
@@ -75,8 +89,10 @@ handleCreateBirthday = async(createData) => {
           <>
           <Birthday
           handleCreateGift={this.handleCreateGift}
+          handleUpdateGift={this.handleUpdateGift}
           birthday={birthday}
           id={birthday.id}
+
           view={this.props.view}
           handleView={this.props.handleView}/>
           </>
