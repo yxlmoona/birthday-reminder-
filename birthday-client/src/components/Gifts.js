@@ -10,8 +10,8 @@ class Gifts extends React.Component{
         this.props.gifts.map((gift) => {
         return(
         <>
-          <h1>gift's name: {gift.name}</h1>
-          <h1>gift's price: {gift.price}</h1>
+          <h2 className="info">gift's name: {gift.name}</h2>
+          <h2 className="info">gift's price: {gift.price}</h2>
         </>
         )
         })
