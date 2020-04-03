@@ -16,9 +16,9 @@ class GiftsController < ApplicationController
   # POST /gifts
   def create
     @gift = Gift.new(gift_params)
-
+    @gift.birthday_id = params[:birthday_id]
     if @gift.save
-      render json: @gift, status: :created, location: @gift
+      render json: @gift, status: :created
     else
       render json: @gift.errors, status: :unprocessable_entity
     end
