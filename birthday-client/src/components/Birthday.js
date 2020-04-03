@@ -18,19 +18,20 @@ class Birthday extends React.Component{
         }}>add gifts</button>
 
         {
-          this.props.view.showGiftForm
-          ?  <Form
-            id={this.props.id}
-            handleCreateGift={this.props.handleCreateGift}
-            handleUpdateGift={this.props.handleUpdateGift}
-            view={this.props.view}
-            
-            />
-          : ''
+          // this.props.view.showGiftForm
+          // ?  <Form
+          //   id={this.props.id}
+          //   handleCreateGift={this.props.handleCreateGift}
+          //   handleUpdateGift={this.props.handleUpdateGift}
+          //   view={this.props.view}
+          //
+          //   />
+          // : ''
         }
         {
           this.props.view.showGifts
           ?<Gifts
+          id={this.props.id}
           gifts={this.props.birthday.gifts}
           view={this.props.view}
           handleView={this.props.handleView}
