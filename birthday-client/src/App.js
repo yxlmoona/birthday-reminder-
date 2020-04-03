@@ -5,7 +5,7 @@ class App extends React.Component {
     view:{
       page: 'home',
       pageTitle: 'I heard that...',
-      show: true
+      show: false
     }
   }
   handleView = (view) => {

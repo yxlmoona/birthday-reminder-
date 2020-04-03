@@ -1,5 +1,6 @@
 import React from 'react'
 import Gifts from './Gifts.js'
+import Form from './Form.js'
 class Birthday extends React.Component{
 
   render(){
@@ -12,6 +13,11 @@ class Birthday extends React.Component{
         <button onClick={() => {
             this.props.handleView('gifts')
         }}>see gifts</button>
+        <button>add gifts</button>
+        <Form
+        id={this.props.id}
+        handleCreateGift={this.props.handleCreateGift}
+        />
         {
           this.props.view.show
           ?<Gifts
