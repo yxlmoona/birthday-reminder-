@@ -23,13 +23,13 @@ class Gifts extends React.Component{
           <h1>gift's name: {gift.name}</h1>
           <h1>gift's price: {gift.price}</h1>
           {
-          //   this.props.view.showGiftForm
-          // ? <Form
-          // giftId={gift.id}
-          // view={this.props.view}
-          // handleView={this.props.handleView}
-          // handleUpdateGift={this.props.handleUpdateGift}/>
-          // :''
+            this.props.view.showGiftForm
+          ? <Form
+          giftId={gift.id}
+          view={this.props.view}
+          handleView={this.props.handleView}
+          handleUpdateGift={this.props.handleUpdateGift}/>
+          :''
         }
         </>
         )
